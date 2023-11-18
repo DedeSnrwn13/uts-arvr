@@ -9,31 +9,78 @@
 
 <body style="margin: 0; overflow: hidden">
   <a-scene embeded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <!-- Background Sound -->
+    <a-sound id="backgroundSound" autoplay="true" loop="true" volume="0.5"></a-sound>
+
     <!--   Naruto   -->
-    <a-marker type="pattern"
+    <a-marker id="markerNaruto" type="pattern"
       url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-narrrutoo.patt?v=1700273186597">
-      <a-video id="imageNaruto" position="0 0 0" rotation="-90 1 0" width="8" height="4.5"
+      <a-video id="imageNaruto" position="0 1 0" rotation="-90 1 0" width="8" height="4.5"
         material="shader: flat; scale: 2 2 2;"
         src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-rasengan.mp4?v=1700271511020"></a-video>
     </a-marker>
 
     <!--   Sasuke   -->
-    <a-marker type="pattern"
+    <a-marker id="markerSasuke" type="pattern"
       url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-sassukee.patt?v=1700273205606">
-      <a-video id="imageSasuke" position="0 0 0" rotation="-90 0 0" width="8" height="4.5"
+      <a-video id="imageSasuke" position="0 1 0" rotation="-90 0 0" width="8" height="4.5"
         material="shader: flat; scale: 2 2 2;"
         src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/sasuke-chidori.mp4?v=1700273896884"></a-video>
     </a-marker>
 
     <!--   Naruto vs Sasuke   -->
-    <a-marker type="pattern"
-      url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-naruto%20vs%20sasuke.patt?v=1700275997382">
-      <a-video id="imageNarutoSasuke" position="0 0 0" rotation="-90 0 0" width="8" height="4.5"
-        src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-sasuke.mp4?v=1700273904258"></a-video>
+    <a-marker id="markerNarutoSasuke" type="pattern"
+      url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-hiro.patt?v=1700278742283">
+      <a-video id="imageNarutoSasuke" position="0 1 0" rotation="-90 0 0" width="8" height="4.5"
+        src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-sasuke.mp4?v=1700277740382"></a-video>
     </a-marker>
 
     <!-- Camera to view the scene -->
     <a-entity camera></a-entity>
+
+    <script>
+      document.addEventListener("markerFound", function (event) {
+        var sound = document.getElementById("backgroundSound");
+
+        document.addEventListener("markerFound", function (event) {
+          var markerId = event.target.getAttribute("id");
+          updateBackgroundSound(markerId);
+        });
+
+        document.addEventListener("markerLost", function () {
+          sound.setAttribute("src", ""); // Set an empty source or stop the sound
+        });
+
+        // Set the background sound source based on the markerId
+        function updateBackgroundSound(markerId) {
+          switch (markerId) {
+            case "markerNaruto":
+              sound.setAttribute(
+                "src",
+                "https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/rasengan%20sound.m4a?v=1700279884008"
+              );
+              break;
+            case "markerSasuke":
+              sound.setAttribute(
+                "src",
+                "https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/chidori%20sound.m4a?v=1700279873093"
+              );
+              break;
+            case "markerNarutoSasuke":
+              sound.setAttribute(
+                "src",
+                "https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/rasengan%20vs%20chidori%20sound.m4a?v=1700279868658"
+              );
+              break;
+            default:
+              sound.setAttribute(
+                "src",
+                "https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/default%20sound.m4a?v=1700279992391"
+              );
+          }
+        }
+      });
+    </script>
   </a-scene>
 </body>
 
