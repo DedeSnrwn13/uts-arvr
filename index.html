@@ -1,1 +1,40 @@
-<!DOCTYPE html><html lang="en">  <head>    <title>UTS ARVR - Dede Sunarwan 21552011318</title>    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>  </head>  <body style="margin: 0; overflow: hidden">    <a-scene embeded arjs="sourceType: webcam; debugUIEnabled: false;">      <!--   Naruto   -->      <a-marker        type="pattern"        url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-narrrutoo.patt?v=1700273186597"      >        <a-video          id="imageNaruto"          position="0 0 0"          rotation="-90 1 0"          width="8"          height="4.5"          material="shader: flat; scale: 2 2 2;"          src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-rasengan.mp4?v=1700271511020"        ></a-video>      </a-marker>      <!--   Sasuke   -->      <a-marker        type="pattern"        url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-sassukee.patt?v=1700273205606"      >        <a-video          id="imageSasuke"          position="0 0 0"          rotation="-90 0 0"          width="8"          height="4.5"          material="shader: flat; scale: 2 2 2;"          src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/sasuke-chidori.mp4?v=1700273896884"        ></a-video>      </a-marker>      <!--   Naruto vs Sasuke   -->      <a-marker        type="pattern"        url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-naruto%20vs%20sasuke.patt?v=1700275997382"      >        <a-video          id="imageNarutoSasuke"          position="0 0 0"          rotation="-90 0 0"          width="8"          height="4.5"          src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-sasuke.mp4?v=1700273904258"        ></a-video>      </a-marker>      <!-- Camera to view the scene -->      <a-entity camera></a-entity>    </a-scene>  </body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>UTS ARVR - Dede Sunarwan 21552011318</title>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden">
+  <a-scene embeded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <!--   Naruto   -->
+    <a-marker type="pattern"
+      url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-narrrutoo.patt?v=1700273186597">
+      <a-video id="imageNaruto" position="0 0 0" rotation="-90 1 0" width="8" height="4.5"
+        material="shader: flat; scale: 2 2 2;"
+        src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-rasengan.mp4?v=1700271511020"></a-video>
+    </a-marker>
+
+    <!--   Sasuke   -->
+    <a-marker type="pattern"
+      url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-sassukee.patt?v=1700273205606">
+      <a-video id="imageSasuke" position="0 0 0" rotation="-90 0 0" width="8" height="4.5"
+        material="shader: flat; scale: 2 2 2;"
+        src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/sasuke-chidori.mp4?v=1700273896884"></a-video>
+    </a-marker>
+
+    <!--   Naruto vs Sasuke   -->
+    <a-marker type="pattern"
+      url="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/pattern-naruto%20vs%20sasuke.patt?v=1700275997382">
+      <a-video id="imageNarutoSasuke" position="0 0 0" rotation="-90 0 0" width="8" height="4.5"
+        src="https://cdn.glitch.global/94d4c532-d296-4272-9e30-590224a4fd2a/naruto-sasuke.mp4?v=1700273904258"></a-video>
+    </a-marker>
+
+    <!-- Camera to view the scene -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
